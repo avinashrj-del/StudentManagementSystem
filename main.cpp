@@ -1,7 +1,38 @@
 #include <iostream>
+#include <vector>
+#include <string>
 using namespace std;
+struct Student {
+    int id;
+    string name;
+    int age;
+    float marks;
+};
+void addStudent(vector<Student>& students){
+
+    Student s;
+
+    cout << "Enter Student ID: ";
+    cin >> s.id;
+
+    cout << "Enter Name: ";
+    cin >> s.name;
+
+    cout << "Enter Age: ";
+    cin >> s.age;
+
+    cout << "Enter Marks: ";
+    cin >> s.marks;
+
+
+    students.push_back(s);
+
+    cout << "Student Added Successfully\n";
+}
+
 
 int main() {
+    vector<Student> students;
 
     int choice;
 
@@ -19,8 +50,10 @@ int main() {
 
         switch(choice) {
             case 1:
-                cout << "Add Student Selected\n";
-                break;
+
+    
+    addStudent(students);
+    break;
 
             case 2:
                 cout << "View Students Selected\n";
