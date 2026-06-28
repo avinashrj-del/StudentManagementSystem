@@ -65,6 +65,7 @@ void viewStudents(vector<Student>& students){
 
     }
 
+
 }
 
 
@@ -99,6 +100,41 @@ void searchStudent(vector<Student>& students){
 
         }
 
+    }
+
+
+    cout << "Student not found\n";
+
+}
+// Phase 8: Update Student
+void updateStudent(vector<Student>& students){
+
+    int id;
+
+    cout << "Enter Student ID to update: ";
+    cin >> id;
+
+
+    for(Student &s : students){
+
+        if(s.id == id){
+
+            cout << "Enter New Name: ";
+            cin >> s.name;
+
+
+            cout << "Enter New Age: ";
+            cin >> s.age;
+
+
+            cout << "Enter New Marks: ";
+            cin >> s.marks;
+
+
+            cout << "Student Updated Successfully\n";
+
+            return;
+        }
     }
 
 
@@ -163,8 +199,7 @@ int main(){
 
 
             case 4:
-
-                cout << "Update Student Selected\n";
+   updateStudent(students);
                 break;
 
 
